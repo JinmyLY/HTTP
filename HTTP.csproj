@@ -46,8 +46,20 @@
   <ItemGroup>
     <Compile Include="功能类\云包系统.cs" />
     <Compile Include="功能类\基础功能.cs" />
+    <Compile Include="功能类\封包回调类.cs" />
     <Compile Include="功能类\抓包系统.cs" />
     <Compile Include="功能类\未央系统.cs" />
+    <Compile Include="封包类\TCP工具类.cs" />
+    <Compile Include="封包类\UDP工具类.cs" />
+    <Compile Include="封包类\WebSocket工具类.cs" />
+    <Compile Include="封包类\中间层.cs" />
+    <Compile Include="封包类\事件类.cs" />
+    <Compile Include="封包类\工具类.cs" />
+    <Compile Include="封包类\常量类.cs" />
+    <Compile Include="封包类\接口层.cs" />
+    <Compile Include="封包类\服务层.cs" />
+    <Compile Include="封包类\网络层.cs" />
+    <Compile Include="封包类\证书管理器.cs" />
     <Compile Include="界面类\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,8 +90,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="封包类\" />
+    <Content Include="资源包\SunnyNet64.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
