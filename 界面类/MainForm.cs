@@ -14,6 +14,7 @@ namespace HTTP
         public MainForm()
         {
             InitializeComponent();
+            列表_封包数据.Click += 封包数据_左键;
             this.Height = 325;
             this.Width = 666;
             初始化右键菜单();
@@ -151,14 +152,28 @@ namespace HTTP
             }
         }
 
-        public void 封包数据_添加(string 名称,string 快捷方式,string 长度,string 数据)
+        public void 封包数据_添加(string 名称, string 快捷方式, string 长度, string 数据)
         {
             列表_封包数据.Items.Add(new ListViewItem(new[] { 名称, 快捷方式, 长度, 数据 }));
         }
 
         private void 按钮_修改_Click(object sender, EventArgs e)
         {
+            if (列表_封包数据.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("请先选中要修改的行");
+                return;
+            }
 
+            if (string.IsNullOrWhiteSpace(文本框_名称.Text))
+            {
+                MessageBox.Show("名称不能为空");
+                return;
+            }
+
+            ListViewItem 选中项 = 列表_封包数据.SelectedItems[0];
+            选中项.SubItems[0].Text = 文本框_名称.Text.Trim();
+            选中项.SubItems[3].Text = 文本框_数据.Text.Trim();
         }
     }
 
