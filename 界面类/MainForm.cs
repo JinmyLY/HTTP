@@ -1,7 +1,9 @@
-﻿using System;
+﻿using HTTP.功能类;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,27 @@ namespace HTTP
             初始化右键菜单();
             封包数据_添加("名称", "方式", "长度", "数据");
             封包数据_添加("名称", "方式", "长度", "数据");
+
+
+            this.Text = "封包助手 -> " + 封包类.网络层.Version();
+            封包回调类 testCallBack = new 封包回调类();
+            封包类.网络层 syNet = new 封包类.网络层();
+
+            syNet.BindCallback(testCallBack);
+            syNet.BindPort(9527);
+            bool b = syNet.Start();
+            bool a = syNet.LoadDriver(true);
+            if (a && b)
+            {
+                Debug.Write("中间件启动：");
+                Debug.WriteLine(b);
+                syNet.AddProcessName("DNF.exe");
+                Debug.WriteLine("开始监控DNF.exe");
+            }
+            else
+            {
+                Debug.WriteLine("加载驱动失败，无法拦截进程【注意，需要管理员权限（请检查），win7请安装 KB3033929 补丁】");
+            }
         }
 
         private void 初始化右键菜单()
