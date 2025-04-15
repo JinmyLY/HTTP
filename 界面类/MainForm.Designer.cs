@@ -42,9 +42,9 @@ namespace HTTP
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.文本框_名称 = new System.Windows.Forms.TextBox();
+            this.文本框_数据 = new System.Windows.Forms.TextBox();
+            this.按钮_修改 = new System.Windows.Forms.Button();
             this.输入_日志 = new System.Windows.Forms.TextBox();
             this.功能区 = new System.Windows.Forms.GroupBox();
             this.选择_抓包系统 = new System.Windows.Forms.CheckBox();
@@ -170,6 +170,7 @@ namespace HTTP
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.列表_封包数据.FullRowSelect = true;
             this.列表_封包数据.HideSelection = false;
             this.列表_封包数据.Location = new System.Drawing.Point(4, 62);
             this.列表_封包数据.Name = "列表_封包数据";
@@ -197,28 +198,29 @@ namespace HTTP
             this.columnHeader4.Text = "数据";
             this.columnHeader4.Width = 200;
             // 
-            // textBox1
+            // 文本框_名称
             // 
-            this.textBox1.Location = new System.Drawing.Point(304, 253);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(69, 21);
-            this.textBox1.TabIndex = 12;
+            this.文本框_名称.Location = new System.Drawing.Point(304, 253);
+            this.文本框_名称.Name = "文本框_名称";
+            this.文本框_名称.Size = new System.Drawing.Size(69, 21);
+            this.文本框_名称.TabIndex = 12;
             // 
-            // textBox2
+            // 文本框_数据
             // 
-            this.textBox2.Location = new System.Drawing.Point(4, 253);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(294, 21);
-            this.textBox2.TabIndex = 13;
+            this.文本框_数据.Location = new System.Drawing.Point(4, 253);
+            this.文本框_数据.Name = "文本框_数据";
+            this.文本框_数据.Size = new System.Drawing.Size(294, 21);
+            this.文本框_数据.TabIndex = 13;
             // 
-            // button4
+            // 按钮_修改
             // 
-            this.button4.Location = new System.Drawing.Point(374, 252);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(45, 23);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "修改";
-            this.button4.UseVisualStyleBackColor = true;
+            this.按钮_修改.Location = new System.Drawing.Point(374, 252);
+            this.按钮_修改.Name = "按钮_修改";
+            this.按钮_修改.Size = new System.Drawing.Size(45, 23);
+            this.按钮_修改.TabIndex = 14;
+            this.按钮_修改.Text = "修改";
+            this.按钮_修改.UseVisualStyleBackColor = true;
+            this.按钮_修改.Click += new System.EventHandler(this.按钮_修改_Click);
             // 
             // 输入_日志
             // 
@@ -236,10 +238,10 @@ namespace HTTP
             this.功能区.Controls.Add(this.输入_日志);
             this.功能区.Controls.Add(this.标签_频道特征码);
             this.功能区.Controls.Add(this.label4);
-            this.功能区.Controls.Add(this.button4);
+            this.功能区.Controls.Add(this.按钮_修改);
             this.功能区.Controls.Add(this.标签_本地端口);
-            this.功能区.Controls.Add(this.textBox1);
-            this.功能区.Controls.Add(this.textBox2);
+            this.功能区.Controls.Add(this.文本框_名称);
+            this.功能区.Controls.Add(this.文本框_数据);
             this.功能区.Controls.Add(this.label3);
             this.功能区.Controls.Add(this.标签_服务端口);
             this.功能区.Controls.Add(this.列表_封包数据);
@@ -638,9 +640,9 @@ namespace HTTP
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox 文本框_名称;
+        private System.Windows.Forms.TextBox 文本框_数据;
+        private System.Windows.Forms.Button 按钮_修改;
         private System.Windows.Forms.TextBox 输入_日志;
         private System.Windows.Forms.GroupBox 功能区;
         public System.Windows.Forms.ColumnHeader columnHeader1;
